@@ -1,0 +1,24 @@
+
+<% include('head') %>
+
+<h1>Create Account</h1>
+<%- message %>
+<form method="post" action="/createAccount">
+    <p>
+        <label>Username:</label>
+        <input type="text" name="username">
+    </p>
+    <p>
+        <label>Password:</label>
+        <input type="text" name="password">
+    </p>
+    <p>
+        <label>Retype Password:</label>
+        <input type="text" name="password_2">
+    </p>
+    <p>
+        <input type="submit" value="Create Account">
+    </p>
+</form>
+
+<% include('foot'); %>

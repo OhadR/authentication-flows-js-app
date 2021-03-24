@@ -6,8 +6,13 @@ var express = require('express');
 var hash = require('pbkdf2-password')()
 var path = require('path');
 var session = require('express-session');
+const port = 3000;
+const app = module.exports = express();
+const debug = require('debug')('main');
 
-var app = module.exports = express();
+var xxx = require('authentication-flows-js');
+xxx.config(app);
+
 
 // config
 
@@ -123,8 +128,13 @@ app.post('/login', function(req, res){
     });
 });
 
+app.get('/createAccountPage', (req, res) => {
+    debug('yo yo i am here!');
+    res.render('createAccountPage');
+});
+
 /* istanbul ignore next */
 if (!module.parent) {
-    app.listen(3000);
-    console.log('Express started on port 3000');
+    app.listen(port);
+    debug(`Express started on port ${port}`);
 }
