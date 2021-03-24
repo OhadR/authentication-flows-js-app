@@ -14,6 +14,10 @@ const bodyParser = require('body-parser');
 app.use(bodyParser.json()); // support json encoded bodies
 app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
 
+//to serve static content:
+//app.use(express.static('login'));
+
+
 var xxx = require('authentication-flows-js');
 xxx.config(app);
 
