@@ -10,6 +10,10 @@ const port = 3000;
 const app = module.exports = express();
 const debug = require('debug')('main');
 
+const bodyParser = require('body-parser');
+app.use(bodyParser.json()); // support json encoded bodies
+app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
+
 var xxx = require('authentication-flows-js');
 xxx.config(app);
 
