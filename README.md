@@ -7,3 +7,10 @@ The "authentication-flows-js" project is [here](https://github.com/OhadR/authent
 
 [authentication-flows-js on npm](https://www.npmjs.com/package/authentication-flows-js)
 
+## `body-parser`
+
+According to https://www.digitalocean.com/community/tutorials/use-expressjs-to-get-url-and-post-parameters, the client-app
+MUST use body-parser in order to be able to parse the body params.
+Thus, the `authentication-flows-js` can use:
+
+        debug(`createAccount requestBody ${req.body}`);
