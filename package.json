@@ -18,7 +18,7 @@
   },
   "homepage": "https://github.com/OhadR/authentication-flows-js-app#readme",
   "dependencies": {
-    "authentication-flows-js": "0.0.20",
+    "authentication-flows-js": "0.0.29",
     "body-parser": "^1.19.0",
     "debug": "^4.3.1",
     "ejs": "^3.1.6",
