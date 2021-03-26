@@ -142,3 +142,34 @@ if (!module.parent) {
     app.listen(port);
     debug(`Express started on port ${port}`);
 }
+
+app.get('/sendMail', async(req, res) => {
+    debug('sending email....');
+    await sendEmail('ohad.redlich@intel.com', 'this is a mail!', null);
+});
+
+async function sendEmail(recipient, subject, url) {
+    try {
+        const transporter = nodemailer.createTransport({
+            service: 'gmail',
+            auth: {
+                user: '',
+                pass: ''
+            }
+        });
+
+        const mailOptions = {
+            from: AuthenticationFlowsConfig.instance.emailServerUser,
+            to: recipient,
+            subject: subject,
+            text: 'That was easy!'
+        };
+
+        await transporter.sendMail(mailOptions);
+        debug( 'email was sent successfully.' );
+    }
+    catch (me) {
+        debug( me );
+        throw new AuthenticationFlowsError( me );
+    }
+}
