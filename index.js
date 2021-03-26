@@ -5,6 +5,7 @@ var session = require('express-session');
 const port = 3000;
 const app = module.exports = express();
 const debug = require('debug')('main');
+const nodemailer = require('nodemailer');
 
 const bodyParser = require('body-parser');
 app.use(bodyParser.json()); // support json encoded bodies
@@ -159,7 +160,7 @@ async function sendEmail(recipient, subject, url) {
         });
 
         const mailOptions = {
-            from: AuthenticationFlowsConfig.instance.emailServerUser,
+            from: 'ohadr.developer@gmail.com',
             to: recipient,
             subject: subject,
             text: 'That was easy!'
@@ -170,6 +171,6 @@ async function sendEmail(recipient, subject, url) {
     }
     catch (me) {
         debug( me );
-        throw new AuthenticationFlowsError( me );
+        throw me;
     }
 }
