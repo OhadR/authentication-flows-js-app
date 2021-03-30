@@ -16,7 +16,13 @@ app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
 
 
 var xxx = require('authentication-flows-js');
-xxx.config(app);
+const authFlowsInmem = require('authentication-flows-js-inmem');
+const inmemRepo = new authFlowsInmem.AuthenticationAccountInmemRepository();
+
+xxx.config({
+    user_app: app,
+    authenticationAccountRepository: inmemRepo
+});
 
 
 // config
@@ -134,8 +140,7 @@ app.post('/login', function(req, res){
 });
 
 app.get('/createAccountPage', (req, res) => {
-    debug('yo yo i am here!');
-    res.render('createAccountPage');
+    res.render('createAccountPage', { 'err_msg': null });
 });
 
 /* istanbul ignore next */
