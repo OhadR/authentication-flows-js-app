@@ -2,7 +2,13 @@
 <% include('head') %>
 
 <h1>Create Account</h1>
-<%- message %>
+
+<% if (err_msg) { %>
+    <div style="margin-top:  25px ;position: relative; color: red; font:15px">
+        <span style="font-weight:bold"><%= err_msg %></span>
+    </div>
+<% } %>
+
 <form method="post" action="/createAccount">
     <p>
         <label>email:</label>
