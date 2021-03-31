@@ -1,0 +1,17 @@
+<html>
+    <head>
+        <title>Oops, there was an error</title>
+    </head>
+
+    <body>
+        <h3>Oops, there was an error</h3>
+        <div style="margin-top:  25px ;position: relative; font:15px">
+            <% if (err_msg) { %>
+                <div style="margin-top:  25px ;position: relative; color: red; font:15px">
+                    <span style="font-weight:bold"><%= err_msg %></span>
+                </div>
+            <% } %>
+        </div>
+
+    </body>
+</html>
