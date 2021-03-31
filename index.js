@@ -145,6 +145,25 @@ app.get('/createAccountPage', (req, res) => {
     res.render('createAccountPage', { 'err_msg': null });
 });
 
+app.get('/ohads', (req, res) => {
+    const requestBody = req.body;
+    debug(`ohads `);
+
+    res
+        .status(200)
+        .append('ohads','is the man')
+        .render('createAccountPage', { "err_msg": null });
+
+});
+
+app.get('/link/:username', (req, res) => {
+    debug(`get link for username: ${req.params.username}`);
+    const link = linksInmemRepo.getLink(req.params.username);
+    debug(`link for username: ${req.params.username} is: ${link}`);
+    res
+        .send({'link': link});
+});
+
 /* istanbul ignore next */
 if (!module.parent) {
     app.listen(port);
