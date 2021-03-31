@@ -18,10 +18,12 @@ app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
 var xxx = require('authentication-flows-js');
 const authFlowsInmem = require('authentication-flows-js-inmem');
 const inmemRepo = new authFlowsInmem.AuthenticationAccountInmemRepository();
+const linksInmemRepo = new authFlowsInmem.LinksInmemRepository();
 
 xxx.config({
     user_app: app,
-    authenticationAccountRepository: inmemRepo
+    authenticationAccountRepository: inmemRepo,
+    linksRepository: linksInmemRepo
 });
 
 
