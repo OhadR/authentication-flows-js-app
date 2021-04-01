@@ -107,10 +107,10 @@ app.post('/login', function(req, res){
         user = authenticate(req.body.username, req.body.password);
     }
     catch(e) {
+        debug(`authentication failed for ${req.body.username}`);
         req.session.error = 'Authentication failed, please check your '
-            + ' username and password.'
-            + ' (use "tj" and "foobar")';
-        res.redirect('/login');
+            + ' username and password.';
+        res.redirect(401, '/login');
         return;
     }
 
