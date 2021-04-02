@@ -130,10 +130,6 @@ app.post('/login', function(req, res){
     });
 });
 
-app.get('/createAccountPage', (req, res) => {
-    res.render('createAccountPage', { 'err_msg': null });
-});
-
 app.get('/ohads', (req, res) => {
     const requestBody = req.body;
     debug(`ohads `);
