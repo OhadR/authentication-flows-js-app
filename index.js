@@ -18,13 +18,6 @@ const authFlowsInmem = require('authentication-flows-js-inmem');
 const inmemRepo = new authFlowsInmem.AuthenticationAccountInmemRepository();
 const linksInmemRepo = new authFlowsInmem.LinksInmemRepository();
 
-xxx.config({
-    user_app: app,
-    authenticationAccountRepository: inmemRepo,
-    linksRepository: linksInmemRepo
-});
-
-
 // config
 
 app.set('view engine', 'ejs');
@@ -52,6 +45,12 @@ app.use(function(req, res, next){
     next();
 });
 
+//note: 'app' is AFTER all settings (body-parser and express-session:
+xxx.config({
+    user_app: app,
+    authenticationAccountRepository: inmemRepo,
+    linksRepository: linksInmemRepo
+});
 
 
 
