@@ -53,20 +53,25 @@ app.use(function(req, res, next){
 });
 
 
-function authenticate(name, pass) {
+async function authenticate(name, pass) {
     debug(`authenticating ${name}...`);
 
     const hashedPass = xxx.shaString(pass);
 
-    var user = inmemRepo.loadUserByUsername(name);//AuthenticationUser
+    var user = await inmemRepo.loadUserByUsername(name);//AuthenticationUser
     // query the db for the given username
     if (!user)
-        return fn(new Error('cannot find user'));
+        throw new Error('cannot find user');
+
+    if(!user.isEnabled())
+        throw new Error('account is not active');
 
 
     //validate the credentials:
-    if(hashedPass !== user.getPassword())
-        throw new Error('bad credentials');
+    if(hashedPass !== user.getPassword()) {
+        //wrong password: TODO call setLoginFailureForUser
+        await xxx.onAuthenticationFailure(user.getUsername());
+    }
 
     //success
     return user;
@@ -101,10 +106,10 @@ app.get('/login', function(req, res){
     res.render('login');
 });
 
-app.post('/login', function(req, res){
+app.post('/login', async function(req, res){
     let user;
     try {
-        user = authenticate(req.body.username, req.body.password);
+        user = await authenticate(req.body.username, req.body.password);
     }
     catch(e) {
         debug(`authentication failed for ${req.body.username}`);
