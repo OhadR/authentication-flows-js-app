@@ -53,29 +53,7 @@ app.use(function(req, res, next){
 });
 
 
-async function authenticate(name, pass) {
-    debug(`authenticating ${name}...`);
 
-    const hashedPass = xxx.shaString(pass);
-
-    var user = await inmemRepo.loadUserByUsername(name);//AuthenticationUser
-    // query the db for the given username
-    if (!user)
-        throw new Error('cannot find user');
-
-    if(!user.isEnabled())
-        throw new Error('account is not active');
-
-
-    //validate the credentials:
-    if(hashedPass !== user.getPassword()) {
-        //wrong password: TODO call setLoginFailureForUser
-        await xxx.onAuthenticationFailure(user.getUsername());
-    }
-
-    //success
-    return user;
-}
 
 function restrict(req, res, next) {
     if (req.session.user) {
@@ -102,38 +80,6 @@ app.get('/logout', function(req, res){
     });
 });
 
-app.get('/login', function(req, res){
-    res.render('login');
-});
-
-app.post('/login', async function(req, res){
-    let user;
-    try {
-        user = await authenticate(req.body.username, req.body.password);
-    }
-    catch(e) {
-        debug(`authentication failed for ${req.body.username}`);
-        req.session.error = 'Authentication failed, please check your '
-            + ' username and password.';
-        res.redirect(401, '/login');
-        return;
-    }
-
-    debug(user);
-
-    // Regenerate session when signing in
-    // to prevent fixation
-    req.session.regenerate(function() {
-        // Store the user's primary key
-        // in the session store to be retrieved,
-        // or in this case the entire user object
-        req.session.user = user;
-        req.session.success = 'Authenticated as ' + user.email
-            + ' click to <a href="/logout">logout</a>. '
-            + ' You may now access <a href="/restricted">/restricted</a>.';
-        res.redirect('back');
-    });
-});
 
 app.get('/ohads', (req, res) => {
     const requestBody = req.body;
