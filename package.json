@@ -18,8 +18,8 @@
   },
   "homepage": "https://github.com/OhadR/authentication-flows-js-app#readme",
   "dependencies": {
-    "authentication-flows-js": "0.0.71",
-    "authentication-flows-js-inmem": "1.0.10",
+    "authentication-flows-js": "0.0.78",
+    "authentication-flows-js-inmem": "1.0.15",
     "body-parser": "^1.19.0",
     "debug": "^4.3.1",
     "ejs": "^3.1.6",

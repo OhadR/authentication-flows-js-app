@@ -16,7 +16,6 @@ app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
 var xxx = require('authentication-flows-js');
 const authFlowsInmem = require('authentication-flows-js-inmem');
 const inmemRepo = new authFlowsInmem.AuthenticationAccountInmemRepository();
-const linksInmemRepo = new authFlowsInmem.LinksInmemRepository();
 
 // config
 
@@ -49,7 +48,6 @@ app.use(function(req, res, next){
 xxx.config({
     user_app: app,
     authenticationAccountRepository: inmemRepo,
-    linksRepository: linksInmemRepo
 });
 
 
@@ -93,7 +91,7 @@ app.get('/ohads', (req, res) => {
 
 app.get('/link/:username', (req, res) => {
     debug(`get link for username: ${req.params.username}`);
-    const link = linksInmemRepo.getLink(req.params.username);
+    const link = inmemRepo.getLink(req.params.username);
     debug(`link for username: ${req.params.username} is: ${link}`);
     res
         .send({'link': link});
