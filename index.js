@@ -69,14 +69,6 @@ app.get('/restricted', restrict, function(req, res){
     res.send('Wahoo! restricted area, click to <a href="/logout">logout</a>');
 });
 
-app.get('/logout', function(req, res){
-    // destroy the user's session to log them out
-    // will be re-created next request
-    req.session.destroy(function(){
-        res.redirect('/');
-    });
-});
-
 
 app.get('/ohads', (req, res) => {
     const requestBody = req.body;
