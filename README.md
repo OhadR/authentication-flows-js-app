@@ -17,3 +17,7 @@ MUST use body-parser in order to be able to parse the body params.
 Thus, the `authentication-flows-js` can use:
 
         debug(`createAccount requestBody ${req.body}`);
+
+## dependencies
+
+* `dotenv` - read env-variables from `.env` file

@@ -5,6 +5,9 @@ const port = 3000;
 const app = module.exports = express();
 const debug = require('debug')('main');
 
+// module variables
+const result = require('dotenv').config();
+
 const bodyParser = require('body-parser');
 app.use(bodyParser.json()); // support json encoded bodies
 app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
@@ -49,7 +52,7 @@ xxx.config({
     user_app: app,
     authenticationAccountRepository: inmemRepo,
 });
-
+xxx.AuthenticationFlowsConfig.instance.emailSender = 'authentication.flows@ohadr.com';
 
 
 function restrict(req, res, next) {
@@ -81,6 +84,9 @@ app.get('/ohads', (req, res) => {
 
 });
 
+/**
+ * for automated tests:
+ */
 app.get('/link/:username', (req, res) => {
     debug(`get link for username: ${req.params.username}`);
     const link = inmemRepo.getLink(req.params.username);
