@@ -52,7 +52,6 @@ xxx.config({
     user_app: app,
     authenticationAccountRepository: inmemRepo,
 });
-xxx.AuthenticationFlowsConfig.instance.emailSender = 'authentication.flows@ohadr.com';
 
 
 function restrict(req, res, next) {
@@ -81,7 +80,6 @@ app.get('/ohads', (req, res) => {
         .status(200)
         .append('ohads','is the man')
         .render('createAccountPage', { "err_msg": null });
-
 });
 
 /**
