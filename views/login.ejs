@@ -4,7 +4,7 @@
 <h1>Login</h1>
 <%- message %>
 Try accessing <a href="/restricted">/restricted</a>, then authenticate.
-Not registered? <a href="/createAccountPage">create account</a>.
+Not registered? <a href="/createAccount">create account</a>.
 <form method="post" action="/login">
     <p>
         <label>Username:</label>
@@ -18,6 +18,6 @@ Not registered? <a href="/createAccountPage">create account</a>.
         <input type="submit" value="Login">
     </p>
 </form>
-<a href="/forgotPasswordPage">Forgot password?</a>.
+<a href="/forgotPassword">Forgot password?</a>.
 
 <% include('foot'); %>
