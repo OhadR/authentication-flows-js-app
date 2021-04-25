@@ -21,6 +21,7 @@ const authFlowsInmem = require('authentication-flows-js-inmem');
 const inmemRepo = new authFlowsInmem.AuthenticationAccountInmemRepository();
 const authFlowsES = require('authentication-flows-js-elasticsearch');
 const esRepo = new authFlowsES.AuthenticationAccountElasticsearchRepository();
+const repo = esRepo;
 
 // config
 
@@ -52,7 +53,7 @@ app.use(function(req, res, next){
 //note: 'app' is AFTER all settings (body-parser and express-session:
 xxx.config({
     user_app: app,
-    authenticationAccountRepository: inmemRepo,
+    authenticationAccountRepository: repo,
 });
 
 
@@ -89,7 +90,7 @@ app.get('/ohads', (req, res) => {
  */
 app.get('/link/:username', (req, res) => {
     debug(`get link for username: ${req.params.username}`);
-    const link = inmemRepo.getLink(req.params.username);
+    const link = repo.getLink(req.params.username);
     debug(`link for username: ${req.params.username} is: ${link}`);
     res
         .send({'link': link});
