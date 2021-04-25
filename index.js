@@ -88,10 +88,10 @@ app.get('/ohads', (req, res) => {
 /**
  * for automated tests:
  */
-app.get('/link/:username', (req, res) => {
+app.get('/link/:username', async (req, res) => {
     debug(`get link for username: ${req.params.username}`);
-    const link = repo.getLink(req.params.username);
-    debug(`link for username: ${req.params.username} is: ${link}`);
+    const link = await repo.getLink(req.params.username);
+    debug(`link for username: ${req.params.username} is: ${JSON.stringify(link)}`);
     res
         .send({'link': link});
 });
