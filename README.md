@@ -8,7 +8,18 @@ The "authentication-flows-js" project is [here](https://github.com/OhadR/authent
 [authentication-flows-js on npm](https://www.npmjs.com/package/authentication-flows-js)
 
 
-    set DEBUG=*,-follow-redirects -express:* -body-parser:*
+## required environment variables (for hosting-app and tests)
+
+    DEBUG=*,-follow-redirects -express:* -body-parser:*
+    emailSender
+    smtpServer
+    smtpPort
+    emailServerUser
+    emailServerPass
+
+loading on windows the env file:
+
+    for /F %A in (.env) do SET %A
 
 ## `body-parser`
 
