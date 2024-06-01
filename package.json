@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "build",
+    "build": "echo build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -18,7 +18,7 @@
   },
   "homepage": "https://github.com/OhadR/authentication-flows-js-app#readme",
   "dependencies": {
-    "authentication-flows-js": "file:../authentication-flows-proj/authentication-flows-js",
+    "authentication-flows-js": "1.0.16",
     "authentication-flows-js-inmem": "1.0.22",
     "authentication-flows-js-elasticsearch": "1.0.12",
     "body-parser": "^1.19.0",

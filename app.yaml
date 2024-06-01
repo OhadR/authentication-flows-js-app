@@ -1,0 +1,11 @@
+runtime: nodejs18
+
+instance_class: F2
+
+env_variables:
+  DEBUG: "*,-follow-redirects -express:* -body-parser:*"
+  emailSender: "ohad.ohad"
+  smtpServer: "smtp.gmail.com"
+  smtpPort: "587"
+  emailServerUser: "oha*****@gmail.com"
+  emailServerPass: "*********"
