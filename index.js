@@ -1,7 +1,6 @@
 var express = require('express');
 var path = require('path');
 var session = require('express-session');
-const port = 3000;
 const app = module.exports = express();
 const debug = require('debug')('main');
 
@@ -98,6 +97,6 @@ app.get('/link/:username', async (req, res) => {
 
 /* istanbul ignore next */
 if (!module.parent) {
-    app.listen(port);
-    debug(`Express started on port ${port}`);
+    app.listen(process.env.PORT);
+    debug(`Express started on port ${process.env.PORT}`);
 }
