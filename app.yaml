@@ -9,3 +9,8 @@ env_variables:
   smtpPort: "587"
   emailServerUser: "oha*****@gmail.com"
   emailServerPass: "*********"
+
+handlers:
+  - url: /favicon.ico
+    static_files: images/favicon.ico
+    upload: images/favicon.ico
