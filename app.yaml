@@ -4,7 +4,6 @@ instance_class: F2
 
 env_variables:
   DEBUG: "*,-follow-redirects -express:* -body-parser:*"
-  PORT: 3000
   emailSender: "ohad.ohad"
   smtpServer: "smtp.gmail.com"
   smtpPort: "587"
