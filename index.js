@@ -16,11 +16,9 @@ app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
 
 
 var xxx = require('authentication-flows-js');
-const authFlowsInmem = require('authentication-flows-js-inmem');
-const inmemRepo = new authFlowsInmem.AuthenticationAccountInmemRepository();
-const authFlowsES = require('authentication-flows-js-elasticsearch');
-const esRepo = new authFlowsES.AuthenticationAccountElasticsearchRepository();
-const repo = esRepo;
+const authFlowsInmem = require('authentication-flows-js-gae-datastore');
+const inmemRepo = new authFlowsInmem.AuthenticationAccountGAERepository();
+const repo = inmemRepo;
 
 // config
 
