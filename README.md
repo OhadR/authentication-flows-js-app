@@ -32,3 +32,11 @@ Thus, the `authentication-flows-js` can use:
 ## dependencies
 
 * `dotenv` - read env-variables from `.env` file
+
+## Google AppEngine
+
+this app is also deployed on Google's PaaS, AppEngine. You can find it here: https://auth-flows-js-demo.appspot.com
+
+### deploy
+
+    gcloud app deploy
