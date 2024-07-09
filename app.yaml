@@ -12,5 +12,5 @@ env_variables:
 
 handlers:
   - url: /favicon.ico
-    static_files: images/favicon.ico
-    upload: images/favicon.ico
+    static_files: static/images/favicon.ico
+    upload: static/images/favicon.ico
