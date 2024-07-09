@@ -1,4 +1,4 @@
-# <img src="images/favicon.ico" alt="logo" height="40"/> authentication-flows-js-app
+# <img src="static/images/favicon.ico" alt="logo" height="40"/> authentication-flows-js-app
 
 This project is a web-app, and uses the "authentication-flows-js" module. 
 The "authentication-flows-js" project is [here](https://github.com/OhadR/authentication-flows-js).

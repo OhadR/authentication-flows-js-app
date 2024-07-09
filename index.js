@@ -24,6 +24,9 @@ const repo = esRepo;
 
 // config
 
+// to serve static pages, like images (the icon in logn page):
+app.use('/static', express.static(`${__dirname}/static`));
+
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
