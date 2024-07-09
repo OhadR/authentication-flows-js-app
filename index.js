@@ -3,6 +3,7 @@ var path = require('path');
 var session = require('express-session');
 const app = module.exports = express();
 const debug = require('debug')('main');
+require('./log-config');
 
 // module variables
 const result = require('dotenv').config();
