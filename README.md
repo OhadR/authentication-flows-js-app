@@ -1,4 +1,4 @@
-# <img src="images/favicon.ico" alt="logo" height="40"/> authentication-flows-js-app
+# <img src="static/images/favicon.ico" alt="logo" height="40"/> authentication-flows-js-app
 
 This project is a web-app, and uses the "authentication-flows-js" module. 
 The "authentication-flows-js" project is [here](https://github.com/OhadR/authentication-flows-js).
@@ -38,5 +38,7 @@ Thus, the `authentication-flows-js` can use:
 this app is also deployed on Google's PaaS, AppEngine. You can find it here: https://auth-flows-js-demo.appspot.com
 
 ### deploy
+
+from Google Cloud SDK Shell:
 
     gcloud app deploy
