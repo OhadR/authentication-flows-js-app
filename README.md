@@ -39,4 +39,6 @@ this app is also deployed on Google's PaaS, AppEngine. You can find it here: htt
 
 ### deploy
 
+from Google Cloud SDK Shell:
+
     gcloud app deploy
