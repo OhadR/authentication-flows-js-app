@@ -1,14 +1,8 @@
-<html>
-    <head>
-        <title>Account Created Successfully</title>
-    </head>
+<%- include('head.ejs') %>
 
-    <body>
-        <h3>Account Created Successfully</h3>
-        <div style="margin-top:  25px ;position: relative; font:15px">
+<h1>Account Created Successfully</h1>
+<div style="margin-top:  25px ;position: relative; font:15px">
         An activation message was sent to <span style="font-weight:bold"><%= email %></span><br>
         Please follow the instructions in the message to complete the authentication process.
-        </div>
-
-    </body>
-</html>
+</div>
+<%- include('foot.ejs') %>
