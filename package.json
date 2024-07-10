@@ -19,7 +19,7 @@
   },
   "homepage": "https://github.com/OhadR/authentication-flows-js-app#readme",
   "dependencies": {
-    "authentication-flows-js": "1.2.0",
+    "authentication-flows-js": "1.5.0",
     "authentication-flows-js-gae-datastore": "1.0.0",
     "body-parser": "^1.19.0",
     "debug": "^4.3.1",
