@@ -42,3 +42,7 @@ this app is also deployed on Google's PaaS, AppEngine. You can find it here: htt
 from Google Cloud SDK Shell:
 
     gcloud app deploy
+
+
+------
+### using:  <img src="static/images/ejs-logo.png" alt="EJS" height="40"/>
