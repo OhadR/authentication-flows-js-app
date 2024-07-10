@@ -70,11 +70,6 @@ app.get('/', restrict, function(req, res){
     res.render('main');
 });
 
-app.get('/restricted', restrict, function(req, res){
-    res.send('Wahoo! restricted area, click to <a href="/logout">logout</a>');
-});
-
-
 app.get('/ohads', (req, res) => {
     const requestBody = req.body;
     debug(`ohads `);
