@@ -66,8 +66,8 @@ function restrict(req, res, next) {
     }
 }
 
-app.get('/', function(req, res){
-    res.redirect('/login');
+app.get('/', restrict, function(req, res){
+    res.render('main');
 });
 
 app.get('/restricted', restrict, function(req, res){
