@@ -31,7 +31,10 @@ Thus, the `authentication-flows-js` can use:
 
 ## dependencies
 
-* `dotenv` - read env-variables from `.env` file
+* `authentication-flows-js` <img src="static/images/favicon.ico" alt="EJS" height="40"/> - to implement all authentication flows.
+* `authentication-flows-js-gae-datastore` - authentication-flows' implementation for Google AppEngine storage.
+* `dotenv` <img src="static/images/dotenv.svg" alt="EJS" height="40"/> - read env-variables from `.env` file.
+* `ejs` <img src="static/images/ejs-logo.png" alt="EJS" height="40"/> - to serve the HTML pages from the backend.
 
 ## Google AppEngine
 
@@ -44,5 +47,4 @@ from Google Cloud SDK Shell:
     gcloud app deploy
 
 
-------
-### using:  <img src="static/images/ejs-logo.png" alt="EJS" height="40"/>
+
