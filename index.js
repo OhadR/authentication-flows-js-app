@@ -54,6 +54,7 @@ app.use(function(req, res, next){
 xxx.config({
     user_app: app,
     authenticationAccountRepository: repo,
+    applicationName: 'authentication-flows Demo App',
 });
 
 
