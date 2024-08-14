@@ -16,9 +16,10 @@ app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
 
 
 var xxx = require('authentication-flows-js');
-const authFlowsInmem = require('authentication-flows-js-gae-datastore');
-const inmemRepo = new authFlowsInmem.AuthenticationAccountGAERepository();
-const repo = inmemRepo;
+const authFlowsGae = require('authentication-flows-js-gae-datastore');
+const gaeRepo = new authFlowsGae.AuthenticationAccountGAERepository();
+// const inmemRepo = new xxx.AuthenticationAccountInmemRepository();
+const repo = gaeRepo;
 
 // config
 
